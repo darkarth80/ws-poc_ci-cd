@@ -1,4 +1,6 @@
 server:
+  servlet:
+    context-path: /ws-poc
   port: 5001
 
 #TODO: figure out why I need this here and in bootstrap.yml
