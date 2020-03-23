@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -22,13 +23,16 @@ public class HelloWorldConfigurationTests {
 	@LocalServerPort
 	private int port;
 
+    @Value("${server.servlet.context-path}")
+    private String context;
+
 	@Autowired
 	private TestRestTemplate restTemplate;
 
 	@Test
 	public void testGreeting() throws Exception {
 		ResponseEntity<String> entity = restTemplate
-				.getForEntity("http://localhost:" + this.port + "/", String.class);
+				.getForEntity("http://localhost:" + this.port + context + "/", String.class);
 		assertEquals(HttpStatus.OK, entity.getStatusCode());
 		//assertEquals(true, false);
 
