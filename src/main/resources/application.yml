@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 5001
 
 #TODO: figure out why I need this here and in bootstrap.yml
 spring:
@@ -16,3 +16,10 @@ endpoints:
     enabled: true
   shutdown:
     enabled: true
+
+app:
+  paises:
+    default:
+      pais: MX
+      oficina: Azcapotzalco
+      informacion: Oficina en CDMX
