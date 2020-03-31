@@ -22,6 +22,6 @@ endpoints:
 app:
   paises:
     default:
-      pais: MX
-      oficina: Azcapotzalco
-      informacion: Oficina en CDMX
+      pais: US
+      oficina: Bentonville
+      informacion: USA
